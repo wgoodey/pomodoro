@@ -28,6 +28,7 @@ def reset():
     update_status("Timer", GREEN)
     canvas.itemconfig(timer_text, text="00:00")
     timer_active = False
+    start_button.config(state="normal")
 
 
 # ---------------------------- TIMER MECHANISM --------------------------- #
@@ -52,6 +53,7 @@ def start_timer(length):
     global timer_active
     timer_active = True
     count_down(length * 60)
+    start_button.config(state="disabled")
     # use this one for testing with seconds
     # count_down(length)
 
